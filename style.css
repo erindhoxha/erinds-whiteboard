@@ -25,6 +25,35 @@ h1 {
     display:block;
     text-align:center;
 }
+.colour-picker {
+    width:30px;
+    height:30px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+}
+.colour-picker:focus {
+    outline:none;
+    box-shadow:2px 2px 15px rgba(0,0,0,0.3);
+}
+.active {
+    border:3px outset lightgreen;
+}
+.red {
+    background:red;
+}
+.black {
+    background:black;
+}
+.grey {
+    background:grey;
+}
+.blue {
+    background:blue;
+}
+.functionality-btns {
+    margin-top:20px;
+}
 #canvas {
     margin:0 auto;
     border:2px solid black;

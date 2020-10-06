@@ -1,7 +1,12 @@
 window.addEventListener("load", () => {
     const canvas = document.querySelector("#canvas");
     const ctx = canvas.getContext("2d");
-
+    const clearBtn = document.querySelector("#clear-btn");
+    const blueBtn = document.querySelector("#blue-btn");
+    const redBtn = document.querySelector("#red-btn");
+    const greyBtn = document.querySelector("#grey-btn");
+    const blackBtn = document.querySelector("#black-btn");
+    const allButtons = document.querySelectorAll(".colour-picker");
     canvas.height = 800;
     canvas.width = 800;
 
@@ -19,8 +24,19 @@ window.addEventListener("load", () => {
     function clearC() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
-    document.querySelector("#clear-btn").addEventListener("click", clearC);
-
+    clearBtn.addEventListener("click", clearC);
+    blueBtn.addEventListener("click", changeColour);
+    redBtn.addEventListener("click", changeColour);
+    greyBtn.addEventListener("click", changeColour);
+    blackBtn.addEventListener("click", changeColour);
+    function changeColour(e) {
+        console.log(this.attributes["data-colour"].value);
+        ctx.strokeStyle = this.attributes["data-colour"].value;
+        if (document.querySelector('.active')) {
+            document.querySelector(".active").classList.remove("active");
+        }
+        this.classList.add('active');
+    }
     function draw(e) {
         if (!painting) return;
         ctx.lineWidth = 10;
