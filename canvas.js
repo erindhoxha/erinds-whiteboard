@@ -6,12 +6,21 @@ window.addEventListener("load", () => {
     const redBtn = document.querySelector("#red-btn");
     const greyBtn = document.querySelector("#grey-btn");
     const blackBtn = document.querySelector("#black-btn");
-    const allButtons = document.querySelectorAll(".colour-picker");
     canvas.height = 800;
     canvas.width = 800;
+    ctx.lineWidth = 10;
 
     //variables
     let painting = false;
+
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("output");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+        ctx.lineWidth = this.value;
+    }
 
     function startPosition(e) {
         draw(e);
@@ -39,7 +48,6 @@ window.addEventListener("load", () => {
     }
     function draw(e) {
         if (!painting) return;
-        ctx.lineWidth = 10;
         ctx.lineCap = "round";
         ctx.lineTo(e.layerX, e.layerY);
         ctx.stroke();

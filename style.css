@@ -21,6 +21,9 @@ h1 {
     border:none;
     padding:10px 25px;
 }
+.output {
+    margin-top:20px;
+}
 @media print
 {    
     .no-print, .no-print *
