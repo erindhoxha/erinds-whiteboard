@@ -11,10 +11,13 @@
     <h1>Erind's whiteboard</h1>
     <canvas id="canvas">
     </canvas>
-    <div class="btn-wrapper">
+    <div class="btn-wrapper no-print">
+        <div class="slidecontainer">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+        <button class="colour-picker black active" id="black-btn" data-colour="black"></button>
         <button class="colour-picker red" id="red-btn" data-colour="red"></button>
         <button class="colour-picker blue" id="blue-btn" data-colour="blue"></button>
-        <button class="colour-picker black" id="black-btn" data-colour="black"></button>
         <button class="colour-picker grey" id="grey-btn" data-colour="grey"></button>
         <div class="functionality-btns">
             <button class="btn clear-btn" id="clear-btn">Clear</button>
